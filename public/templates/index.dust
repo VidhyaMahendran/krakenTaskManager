@@ -1,5 +1,14 @@
 {>"layouts/master" /}
 
+{<title}
+    {@pre type="content" key="index.title"/}
+{/title}
+
 {<body}
-    <h1>{@pre type="content" key="greeting"/}</h1>
+	<div id="listTaskContent">
+		<header>
+			<h2>{@pre type="content" key="index.pageTitle"/}</h2>
+		</header>
+		<p id="noTasks">{@pre type="content" key="index.description"/}</p>
+	</div>
 {/body}

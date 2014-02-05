@@ -1,7 +1,7 @@
 'use strict';
 
 
-module.exports = function IndexModel() {
+module.exports = function listTasksModel() {
     return {
         name: 'Kraken Task Manager'
     };

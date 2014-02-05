@@ -1,0 +1,16 @@
+{>"layouts/master" /}
+
+{<title}
+    {@pre type="content" key="listTasks.title"/}
+{/title}
+
+{<body}
+	<div id="listTaskContent">
+		<header>
+			<h2>{@pre type="content" key="listTasks.pageTitle"/}</h2>
+		</header>
+		<p id="noTasks">{@pre type="content" key="listTasks.noTasksContent"/}</p>
+		<div id="listTasks">
+		</div>
+	</div>
+{/body}

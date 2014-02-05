@@ -1,14 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <title>{+title /}</title>
-    <link rel="stylesheet" href="css/app.css" />
-</head>
-<body>
-<div id="wrapper">
-    {+body /}
-</div>
-
-</body>
+<html>
+	<head>
+		<title>{+title /}</title>
+		<meta http-equiv="content-type" content-type="text/html; charset=utf-8" />
+		<meta name="description" content="Aconex RWD implemented using HTML5, CSS3 and Media Query" />
+		<meta name="keywords" content="Aconex, RWD, Responsive Web Design, HTML5, CSS3, Media Query" />
+		<meta name="viewport" content="initial-scale=1.0, width=device-width">
+		<link rel="stylesheet" media="all" href="css/app.css" />
+		<link type="image/x-icon" rel="icon" href="favicon.ico" />
+		<script src="javascript/taskManager.js"></script>
+	</head>
+	<body>
+		<div class="headerWrapper">
+			<section id="header" class="clearFloat">
+				<header class="logo">
+					<h1><a href="/">{@pre type="content" key="master.logoTitle"/}</a></h1>
+				</header>
+				<nav id="navigation">
+					<h3 class="miniLink" id="mobileNavLink">{@pre type="content" key="master.menuTitle"/}</h3>
+					<ul id="topMenu" class="topNavigation">
+						<li><a id="addTaskLink" href="addEditTasks">{@pre type="content" key="master.addTaskLink"/}</a></li>
+						<li><a id="listTaskLink" href="listTasks">{@pre type="content" key="master.listTasksLink"/}</a></li>
+					</ul>
+				</nav>
+			</section>
+		</div>
+		<div class="contentWrapper">
+			<section id="content">
+				<div class="mainWrapper">
+					<section id="main">
+						{+body /}
+					</section>
+				</div>
+				<div class="footerWrapper">
+					<section id="footer">
+						<header>
+							<h3>{@pre type="content" key="master.copyRightTitle"/}</h3>
+						</header>
+						<p>{@pre type="content" key="master.copyRightInfo"/}</p>
+					</section>
+				</div>
+			</section>
+		</div>
+	</body>
 </html>
