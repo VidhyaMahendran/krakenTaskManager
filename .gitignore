@@ -21,7 +21,7 @@ test/fixtures/.build
 .idea
 .settings
 .iml
-
+.build/
 
 .DS_Store*
 ehthumbs.db
