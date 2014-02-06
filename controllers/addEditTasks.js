@@ -1,8 +1,6 @@
 'use strict';
 
-
-var addEditTasksModel = require('../models/addEditTasks');
-
+var addEditTasksModel = require('../models/tasksModel');
 
 module.exports = function (app) {
 
