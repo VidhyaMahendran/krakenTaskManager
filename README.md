@@ -1,4 +1,4 @@
-# krakenTaskManager
+# Kraken Task Manager
 
 Simple Task Manager App created using Kraken framework.
 
