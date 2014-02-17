@@ -19,8 +19,8 @@
 				<nav id="navigation">
 					<h3 class="miniLink" id="mobileNavLink">{@pre type="content" key="master.menuTitle"/}</h3>
 					<ul id="topMenu" class="topNavigation">
-						<li><a id="addTaskLink" href="addEditTasks">{@pre type="content" key="master.addTaskLink"/}</a></li>
-						<li><a id="listTaskLink" href="listTasks">{@pre type="content" key="master.listTasksLink"/}</a></li>
+						<li class="{+activeClass /}"><a id="addTaskLink" href="addEditTasks">{@pre type="content" key="master.addTaskLink"/}</a></li>
+						<li class="{+inactiveClass /}"><a id="listTaskLink" href="listTasks">{@pre type="content" key="master.listTasksLink"/}</a></li>
 					</ul>
 				</nav>
 			</section>

@@ -1,8 +1,6 @@
 'use strict';
 
-
 var listTasksModel = require('../models/tasksModel');
-
 
 module.exports = function (app) {
 

@@ -4,6 +4,14 @@
     {@pre type="content" key="addEditTasks.title"/}
 {/title}
 
+{<activeClass}
+    active
+{/activeClass}
+
+{<inactiveClass}
+    inactive
+{/inactiveClass}
+
 {<body}
 	<div id="addTaskContent">
 		<header>
@@ -12,7 +20,7 @@
 		<div id="addTaskContent" class="addTaskContentWrapper">
 			<section id="addTask">
 				<p>You can add your task details in the below form. While adding, you can also set the priority of the task.</p>
-				<form name="form_add_task" id="form_add_task" method="post" action="">
+				<form name="form_add_task" id="form_add_task" method="post" action="/addEditTasks">
 					<p class="group">
 						<label for="task_name">Task Name</label>
 						<span class="field">
@@ -59,7 +67,6 @@
 					</p>
 					<p class="group buttonGroup">
 						<input class="inputControl" type="hidden" name="task_id" id="task_id" />
-						<input type="submit" value="Edit your task" name="edit_task" id="edit_task" class="button hide" />
 						<input type="submit" value="Add your task" name="add_task" id="add_task" class="button" />
 						<input type="button" value="Cancel" name="cancel_add_task" id="cancel_add_task" class="button secondary" />
 					</p>

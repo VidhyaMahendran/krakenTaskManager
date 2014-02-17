@@ -4,13 +4,22 @@
     {@pre type="content" key="listTasks.title"/}
 {/title}
 
+{<activeClass}
+    inactive
+{/activeClass}
+
+{<inactiveClass}
+    active
+{/inactiveClass}
+
 {<body}
 	<div id="listTaskContent">
 		<header>
 			<h2>{@pre type="content" key="listTasks.pageTitle"/}</h2>
 		</header>
-		<p id="noTasks">{@pre type="content" key="listTasks.noTasksContent"/}</p>
+		<p id="noTasks" class="hide">{@pre type="content" key="listTasks.noTasksContent"/}</p>
 		<div id="listTasks">
 		</div>
 	</div>
+   <script src="../js/listTasks.js"></script>
 {/body}

@@ -9,6 +9,12 @@
 		<header>
 			<h2>{@pre type="content" key="index.pageTitle"/}</h2>
 		</header>
+		<div id="hasLocalStorage" class="message hide">
+			<p>{@pre type="content" key="index.supportsLocalStorage"/}</p>
+		</div>
+		<div id="hasNoLocalStorage" class="message error hide">
+			<p>{@pre type="content" key="index.noSupportForLocalStorage"/}</p>
+		</div>
 		<p id="noTasks">{@pre type="content" key="index.description"/}</p>
 	</div>
 {/body}
