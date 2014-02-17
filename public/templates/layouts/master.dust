@@ -28,6 +28,13 @@
 		<div class="contentWrapper">
 			<section id="content">
 				<div class="mainWrapper">
+                    <div class="lang">
+                        <ul class="langNav">
+                            <li><strong>{@pre type="content" key="master.switchLang"/}</strong></li>
+                            <li><a href="/changeLanguage/en_US">{@pre type="content" key="master.english"/}</a></li>
+                            <li><a href="/changeLanguage/he_IL">{@pre type="content" key="master.hebrew"/}</a></li>
+                        </ul>
+                    </div>
 					<section id="main">
 						{+body /}
 					</section>

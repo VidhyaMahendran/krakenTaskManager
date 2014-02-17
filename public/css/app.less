@@ -54,7 +54,7 @@ p{
 .headerWrapper{
 	background:#003676;
 	.boxShadow();
-	margin:@zero @posAuto 2em;
+	margin:@zero @posAuto .5em;
 }
 #header{
 	margin:@zero @posAuto;
@@ -107,6 +107,16 @@ p{
         color:#003676;
       }
     }
+}
+.langNav{
+  margin:.5em @zero;
+  width:280px;
+  padding:.5em 0;
+  background:@colorCCC;
+  li{
+    display:inline;
+    margin:0 .5em 0;
+  }
 }
 .message{
 	background:#F2F2F2;
@@ -188,7 +198,7 @@ select{
 	margin:2em @zero 0 -11em;
 }
 .buttonGroup{
-	clear:both;
+  .clearElement(both);
 }
 .button{
 	background:#091C5A;
@@ -230,7 +240,7 @@ label{
 }
 .footerWrapper{
 	border-top:1px solid #333343;
-	clear:both;
+    .clearElement(both);
 	margin:1em @zero 0;
 	padding:.5em 0;
 	text-align:center;

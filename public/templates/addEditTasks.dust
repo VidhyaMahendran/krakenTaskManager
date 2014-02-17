@@ -15,60 +15,60 @@
 {<body}
 	<div id="addTaskContent">
 		<header>
-			<h2>Add your task</h2>
+			<h2>{@pre type="content" key="addEditTasks.pageTitle"/}</h2>
 		</header>
 		<div id="addTaskContent" class="addTaskContentWrapper">
 			<section id="addTask">
-				<p>You can add your task details in the below form. While adding, you can also set the priority of the task.</p>
+				<p>{@pre type="content" key="addEditTasks.description"/}</p>
 				<form name="form_add_task" id="form_add_task" method="post" action="/addEditTasks">
 					<p class="group">
-						<label for="task_name">Task Name</label>
+						<label for="task_name">{@pre type="content" key="addEditTasks.taskName"/}</label>
 						<span class="field">
-							<input type="text" placeholder="Enter your task name" name="task_name" id="task_name" class="inputControl textBox" autocomplete="off" required />
+							<input type="text" placeholder="{@pre type="content" key="addEditTasks.enterYourTaskName"/}" name="task_name" id="task_name" class="inputControl textBox" autocomplete="off" required />
 						</span>
 					</p>
 					<p class="group">
-						<label for="task_priority">Task Category</label>
+						<label for="task_priority">{@pre type="content" key="addEditTasks.enterYourTaskName"/}</label>
 						<span class="field">
 							<select class="inputControl" name="task_priority" id="task_priority">
-								<option value="normal">Normal</option>
-								<option value="high">High</option>
+								<option value="normal">{@pre type="content" key="addEditTasks.normal"/}</option>
+								<option value="high">{@pre type="content" key="addEditTasks.high"/}</option>
 							</select>
 						</span>
 					</p>
 					<p class="group">
-						<label for="task_details">Task Details</label>
+						<label for="task_details">{@pre type="content" key="addEditTasks.taskDetails"/}</label>
 						<span class="field">
-							<textarea placeholder="Enter your task in detail" name="task_details" id="task_details" class="inputControl textBox textArea" autocomplete="off" required></textarea>
+							<textarea placeholder="{@pre type="content" key="addEditTasks.enterTaskDetails"/}" name="task_details" id="task_details" class="inputControl textBox textArea" autocomplete="off" required></textarea>
 						</span>
 					</p>
 					<p class="group">
-						<label for="task_created">Task Created</label>
+						<label for="task_created">{@pre type="content" key="addEditTasks.taskCreated"/}</label>
 						<span class="field">
-							<input type="text" placeholder="" name="task_created" id="task_created" class="inputControl textBox readonlyText small" autocomplete="off" readOnly />
+							<input type="text" name="task_created" id="task_created" class="inputControl textBox readonlyText small" autocomplete="off" readOnly />
 						</span>
 					</p>
 					<p class="group">
-						<label for="task_eta">Task Completion</label>
+						<label for="task_eta">{@pre type="content" key="addEditTasks.taskCompletion"/}</label>
 						<span class="field">
-							<input type="date" placeholder="DD/MM/YYYY" name="task_eta" id="task_eta" class="inputControl textBox small" autocomplete="off" required />
+							<input type="date" placeholder="{@pre type="content" key="addEditTasks.taskCompletionDate"/}" name="task_eta" id="task_eta" class="inputControl textBox small" autocomplete="off" required />
 						</span>
 					</p>
 					<p class="group">
-						<label for="task_status">Task Status</label>
+						<label for="task_status">{@pre type="content" key="addEditTasks.taskStatus"/}</label>
 						<span class="field">
 							<select class="inputControl" name="task_status" id="task_status" />
-								<option value="not_started">Not started</option>
-								<option value="in_progress">In progress</option>
-								<option value="blocked">Blocked</option>
-								<option value="completed">Completed</option>
+								<option value="not_started">{@pre type="content" key="addEditTasks.notStarted"/}</option>
+								<option value="in_progress">{@pre type="content" key="addEditTasks.inProgress"/}</option>
+								<option value="blocked">{@pre type="content" key="addEditTasks.blocked"/}</option>
+								<option value="completed">{@pre type="content" key="addEditTasks.completed"/}</option>
 							</select>
 						</span>
 					</p>
 					<p class="group buttonGroup">
 						<input class="inputControl" type="hidden" name="task_id" id="task_id" />
-						<input type="submit" value="Add your task" name="add_task" id="add_task" class="button" />
-						<input type="button" value="Cancel" name="cancel_add_task" id="cancel_add_task" class="button secondary" />
+						<input type="submit" value="{@pre type="content" key="addEditTasks.addYourTask"/}" name="add_task" id="add_task" class="button" />
+						<input type="button" value="{@pre type="content" key="addEditTasks.cancel"/}" name="cancel_add_task" id="cancel_add_task" class="button secondary" />
 					</p>
 				</form>
 			</section>
