@@ -35,4 +35,5 @@ taskManager.listTasks = {
 
 window.onload = function() {
     taskManager.listTasks.init();
+    taskManager.displayItems.setPageBasedOnLanguage();
 };

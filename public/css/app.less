@@ -6,25 +6,29 @@
 @color333343:#333343;
 @colorCCC:#CCC;
 @colorFFF:#FFF;
+@colorF00:#F00;
 @unit1px:1px;
 @posAuto:auto;
-.boxShadow() {
+.boxShadow(){
   box-shadow:@zero @unit1px * 10 @unit1px * 5 @unit1px @colorCCC;
   -moz-box-shadow:@zero @unit1px * 10 @unit1px * 5 @unit1px @colorCCC;
   -webkit-box-shadow:@zero @unit1px * 10 @unit1px * 5 @unit1px @colorCCC;
 }
-.borderRadius(@radius:5px) {
+.borderRadius(@radius:5px){
   border-radius:@radius;
 }
-.floatElement(@pos:left) {
+.floatElement(@pos:left){
   float:@pos;
 }
-.clearElement(@pos:left) {
+.clearElement(@pos:left){
   clear:@pos;
+}
+.textAlign(@alignPos:left){
+  text-align:@alignPos;
 }
 body{
 	font-family:"Armata";
-	text-align:center;
+    .textAlign(center);
 	font-size:85%;
 	color :@color333343;
 }
@@ -41,7 +45,7 @@ p{
 	margin:@zero @zero 1em;
 }
 .contentWrapper{
-	text-align:left;
+    .textAlign();
 	margin:@zero @posAuto;
 }
 .hide{
@@ -62,7 +66,7 @@ p{
 }
 .logo{
 	width:285px;
-	text-align:left;
+    .textAlign();
 	.floatElement();
 	.clearElement();
     a {
@@ -81,7 +85,7 @@ p{
 	.floatElement(right);
 	.clearElement(right);
 	margin:@zero;
-	text-align:right;
+    .textAlign(right);
     li{
       display:inline;
       margin:@zero @zero 0 1em;
@@ -134,7 +138,7 @@ p{
 		margin:@zero @zero .5em;
 	}
 	.error p,#deleteSuccess{
-		color:#F00;
+		color:@colorF00;
 	}
 	#addEditSuccess{
 		color:#00F;
@@ -179,24 +183,15 @@ select{
 .buttonGroup{
 	margin:@zero @zero 0 9em;
 }
-.error .textBox{
-	border-color:#F00;
-	color:#F00;
-}
-	.error label{
-		color:#F00;
-	}
-.delTaskWarn{
-	background:@colorFFF;
-	color:#F00;
-	font-weight:bold;
-    .borderRadius();
-	padding:.5em;
-	position:absolute;
-	width:10em;
-	border:1px solid #FE7D19;
-	margin:2em @zero 0 -11em;
-}
+.error{
+  .textBox{  
+	border-color:@colorF00;
+	color:@colorF00;
+  }
+  label{
+    color:@colorF00;
+  }
+}	
 .buttonGroup{
   .clearElement(both);
 }
@@ -210,16 +205,16 @@ select{
 	border:@zero;
 	font-weight:bold;
 	cursor:pointer;
+    :hover{
+      background:#FE7D19;
+    }
 }
-	.button:hover{
-		background:#FE7D19;
-	}
 .secondary{
 	background:#9C9CA8;
-	color:#081B5A;	
+	color:#081B5A;
 }
 	.secondary:hover{
-		color:@colorFFF;	
+		color:@colorFFF;
 	}
 label{
 	display:block;
@@ -228,27 +223,27 @@ label{
 	color:#081B5A;
 	font-weight:bold;
 }
-	.field label{
-		display:inline;
-		margin:@zero 1em @zero 0; 
-		color :@color333343;
-		font-weight:normal;
-	}
 .field{
 	display:block;
 	margin:@zero @zero 1em;
+    label{
+      display:inline;
+      margin:@zero 1em @zero @zero;
+      color:@color333343;
+      font-weight:normal;
+    }
 }
 .footerWrapper{
 	border-top:1px solid #333343;
     .clearElement(both);
-	margin:1em @zero 0;
-	padding:.5em 0;
-	text-align:center;
+	margin:1em @zero @zero;
+	padding:.5em @zero;
+    .textAlign(center);
 }
 .inlineError{
 	margin:@zero @zero .5em;
 	color:#003676;
-	text-align:right;
+    .textAlign(right);
 	font-size:.8em;
 }
 .successMsg{
@@ -273,6 +268,7 @@ label{
 .taskLabel{
 	text-transform:capitalize;
 	color:#FE7D19;
+    .floatElement();
 }
 @media screen and (min-width:915px){
 	.contentWrapper,#header{
@@ -300,7 +296,7 @@ label{
 	label{
 		float:none;
 		width:@posAuto;
-		margin:@zero @zero .5em 0;
+		margin:@zero @zero .5em @zero;
 	}
 	.buttonGroup{
 		margin:@zero;
@@ -319,7 +315,7 @@ label{
           display:block;
           margin:@zero @zero .5em;
           font-size:.9em;
-          text-align:left;
+          .textAlign();
         }
         a{
           color :@color333343;
@@ -350,11 +346,72 @@ label{
 		border:2px dashed #003676;
 	}
 	label{
-		float:none;
+        .floatElement(none);
 		width:@posAuto;
-		margin:@zero @zero .5em 0;
+		margin:@zero @zero .5em @zero;
 	}
 	.buttonGroup{
 		margin:@zero;
 	}
+}
+
+/* RTL Stylesheet for Hebrew language */
+.rtl{
+  .contentWrapper{
+    .textAlign(right);
+  }
+  .logo{
+    .textAlign(right);
+    .floatElement(right);
+    .clearElement(right);
+  }
+  #navigation{
+    .floatElement();
+    .clearElement();
+    .textAlign();
+    li{
+      margin:@zero 1em @zero @zero;
+    }
+  }
+  .buttonGroup{
+    margin:@zero 9em @zero @zero;
+  }
+  .button{
+    margin:@zero @zero .5em .5em;
+  }
+  label{
+    .floatElement(right);
+  }
+  .field{
+    label{
+      margin:@zero @zero @zero 1em;
+    }
+  }
+  .inlineError{
+    .textAlign();
+  }
+  .taskLabel{
+    .floatElement(right);
+  }
+  @media screen and (min-width:915px){
+
+  }
+  @media screen and (min-width:768px) and (max-width:914px){
+
+  }
+  @media screen and (min-width:480px) and (max-width:767px){
+
+  }
+  @media screen and (max-width:479px){
+    #navigation{
+      .floatElement();
+      .clearElement();
+      li{
+        .textAlign(right);
+      }
+    }
+    .topNavigation{
+      left:1.3em;
+    }
+  }
 }
