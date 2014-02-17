@@ -1,6 +1,6 @@
 # Kraken Task Manager
 
-Simple Task Manager App created using Kraken framework.
+Simple Task Manager App created using Kraken framework which supports both English and Hebrew in Right To Left direction.
 
 ## Features
 - This app can be used to add and list the tasks which are added by the user.
