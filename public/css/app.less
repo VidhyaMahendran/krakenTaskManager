@@ -2,108 +2,126 @@
 	font-family:Armata;
 	src:url("../fonts/Armata-Regular-webfont.woff");
 }
+@zero:0;
+@color333343:#333343;
+@colorCCC:#CCC;
+@colorFFF:#FFF;
+@unit1px:1px;
+@posAuto:auto;
+.boxShadow() {
+  box-shadow:@zero @unit1px * 10 @unit1px * 5 @unit1px @colorCCC;
+  -moz-box-shadow:@zero @unit1px * 10 @unit1px * 5 @unit1px @colorCCC;
+  -webkit-box-shadow:@zero @unit1px * 10 @unit1px * 5 @unit1px @colorCCC;
+}
+.borderRadius(@radius:5px) {
+  border-radius:@radius;
+}
+.floatElement(@pos:left) {
+  float:@pos;
+}
+.clearElement(@pos:left) {
+  clear:@pos;
+}
 body{
 	font-family:"Armata";
 	text-align:center;
 	font-size:85%;
-	color:#333343;
+	color :@color333343;
 }
 body,html,div,h1,h2,h3,h4,h5,h6,p,ol,ul,li,section,nav,header,footer,input{
-	margin:0;
-	padding:0;
+	margin:@zero;
+	padding:@zero;
 	list-style:none;
 }
 img{
-	border:0;
+	border:@zero;
 	max-width:100%;
 }
 p{
-	margin:0 0 1em;
+	margin:@zero @zero 1em;
 }
 .contentWrapper{
 	text-align:left;
-	margin:0 auto;
+	margin:@zero @posAuto;
 }
 .hide{
 	display:none;
 }
 .clearFloat,.group{
-	overflow:auto;
+	overflow:@posAuto;
 	zoom:1;
 }
 .headerWrapper{
 	background:#003676;
-	box-shadow:0 10px 5px 1px #CCC;
-	-moz-box-shadow:0 10px 5px 1px #CCC;
-	-webkit-box-shadow:0 10px 5px 1px #CCC;
-	margin:0 auto 2em;
+	.boxShadow();
+	margin:@zero @posAuto 2em;
 }
 #header{
-	margin:0 auto;
+	margin:@zero @posAuto;
 	padding:.9em 0;
 }
 .logo{
 	width:285px;
 	text-align:left;
-	float:left;
-	clear:left;
+	.floatElement();
+	.clearElement();
+    a {
+      background:#FE7D19;
+      color:@colorFFF;
+      text-decoration:none;
+      text-transform:uppercase;
+      padding:.5em;
+      .borderRadius(10px);
+    }
 }
-	.logo a{
-		background:#FE7D19;
-		color:#FFF;
-		text-decoration:none;
-		text-transform:uppercase;
-		padding:.5em;
-		border-radius:10px;
-	}
 #navigation{
 	font-size:1.1em;
 	padding:.2em;
 	width:400px;
-	float:right;
-	clear:right;
-	margin:0;
+	.floatElement(right);
+	.clearElement(right);
+	margin:@zero;
 	text-align:right;
+    li{
+      display:inline;
+      margin:@zero @zero 0 1em;
+    }
+    a{
+      color:@colorFFF;
+      text-decoration:none;
+      font-weight:bold;
+      font-size:1em;
+      padding:.5em;
+      :hover{
+        background:#FE7D19;
+        color:@colorFFF;
+        .borderRadius(5px);
+      }
+    }
+    .active{
+      background:#FE7D19;
+      padding:.5em;
+      color:@colorFFF;
+      .borderRadius();
+      :hover{
+        color:#003676;
+      }
+    }
 }
-	#navigation li{
-		display:inline;
-		margin:0 0 0 1em;
-	}
-	#navigation a{
-		color:#FFF;
-		text-decoration:none;
-		font-weight:bold;
-		font-size:1em;
-		padding:.5em;
-	}
-	#navigation a:hover{
-		background:#FE7D19;
-		color:#FFF;
-		border-radius:5px;
-	}
-	#navigation .active{
-		background:#FE7D19;
-		padding:.5em;
-		color:#FFF;
-		border-radius:5px;
-	}
-	#navigation .active:hover{
-		color:#003676;
-	}
 .message{
 	background:#F2F2F2;
 	padding:1em;
-	border-radius:.5em;
-	margin:0 0 1em;
-	border:1px solid #CCC;
+    .borderRadius(.5em);
+	margin:@zero @zero 1em;
+	border:1px solid @colorCCC;
 	font-weight:bold;
 	font-style:italic;
+    p{
+      margin:@zero;
+    }
 }
-	.message p{
-		margin:0;
-	}
 	.success p{
-		margin:0 0 .5em;
+		margin:@zero @zero .5em;
 	}
 	.error p,#deleteSuccess{
 		color:#F00;
@@ -114,19 +132,19 @@ p{
 	}
 h2{
 	font-size:1.5em;
-	padding:0 0 .5em;
-	margin:0;
+	padding:@zero @zero .5em;
+	margin:@zero;
 }
 h3{
 	display:none;
 	font-weight:normal;
 	font-size:1.5em;
-	margin:0 0 .5em;
+	margin:@zero @zero .5em;
 }
 .textBox,.button,select{
 	padding:.5em;
 	border:1px solid #D8DCE2;
-	border-radius:5px;
+    .borderRadius(5px);
 	border-shadow:none;
 	font-size:1.1em;
 	color:#474747;
@@ -137,7 +155,7 @@ h3{
 	background:#F2F2F2;
 }
 select{
-	width:auto;
+	width:@posAuto;
 }
 .small{
 	width:20%;
@@ -146,10 +164,10 @@ select{
 	height:5em;
 }
 .group{
-	margin:0 0 .5em;
+	margin:@zero @zero .5em;
 }
 .buttonGroup{
-	margin:0 0 0 9em;
+	margin:@zero @zero 0 9em;
 }
 .error .textBox{
 	border-color:#F00;
@@ -159,15 +177,15 @@ select{
 		color:#F00;
 	}
 .delTaskWarn{
-	background:#FFF;
+	background:@colorFFF;
 	color:#F00;
 	font-weight:bold;
-	border-radius:5px;
+    .borderRadius();
 	padding:.5em;
 	position:absolute;
 	width:10em;
 	border:1px solid #FE7D19;
-	margin:2em 0 0 -11em;
+	margin:2em @zero 0 -11em;
 }
 .buttonGroup{
 	clear:both;
@@ -175,11 +193,11 @@ select{
 .button{
 	background:#091C5A;
 	border-color:#474747;
-	width:auto;
+	width:@posAuto;
 	padding:.5em 2em;
-	margin:0 .5em .5em 0;
-	color:#FFF;
-	border:0;
+	margin:@zero .5em .5em 0;
+	color:@colorFFF;
+	border:@zero;
 	font-weight:bold;
 	cursor:pointer;
 }
@@ -191,41 +209,41 @@ select{
 	color:#081B5A;	
 }
 	.secondary:hover{
-		color:#FFF;	
+		color:@colorFFF;	
 	}
 label{
 	display:block;
-	float:left;
+	.floatElement();
 	width:9em;
 	color:#081B5A;
 	font-weight:bold;
 }
 	.field label{
 		display:inline;
-		margin:0 1em 0 0; 
-		color:#333343;
+		margin:@zero 1em @zero 0; 
+		color :@color333343;
 		font-weight:normal;
 	}
 .field{
 	display:block;
-	margin:0 0 1em;
+	margin:@zero @zero 1em;
 }
 .footerWrapper{
 	border-top:1px solid #333343;
 	clear:both;
-	margin:1em 0 0;
+	margin:1em @zero 0;
 	padding:.5em 0;
 	text-align:center;
 }
 .inlineError{
-	margin:0 0 .5em;
+	margin:@zero @zero .5em;
 	color:#003676;
 	text-align:right;
 	font-size:.8em;
 }
 .successMsg{
 	border:1px solid #C2D337;
-	border-radius:5px;
+    .borderRadius();
 	background:#F5F8DF;
 	color:#8E9B25;
 	padding:.5em;
@@ -235,38 +253,17 @@ label{
 }
 .tasksDisp{
 	background:#F6F7F9;
-	margin:0 0 1em;
+	margin:@zero @zero 1em;
 	padding:.5em;
-	border-radius:5px;
+    .borderRadius();
+    p{
+      margin:@zero @zero .5em;
+    }
 }
-	.tasksDisp p{
-		margin:0 0 .5em;
-	}
 .taskLabel{
 	text-transform:capitalize;
 	color:#FE7D19;
 }
-.editDelTask{
-	float:right;
-	display:block;
-	margin:.5em 0;
-}
-	.editDelTask a{
-		border-radius:5px;
-		padding:.5em;
-		background:#FE7D19;
-		font-weight:bold;
-		color:#FFF;
-		cursor:pointer;
-		margin:0 0 0 .5em;
-		text-decoration:none;
-	}
-	.delTask a {
-		background:#F00;
-	}
-	.editDelTask a:hover{
-		text-decoration:underline;
-	}
 @media screen and (min-width:915px){
 	.contentWrapper,#header{
 		width:960px;
@@ -277,7 +274,7 @@ label{
 		width:700px;
 	}
 	.button{
-		width:auto;
+		width:@posAuto;
 	}
 }
 @media screen and (min-width:480px) and (max-width:767px){
@@ -285,18 +282,18 @@ label{
 		width:450px;
 	}
 	#navigation{
-		width:auto;
-		float:left;
+		width:@posAuto;
+		.floatElement();
 		clear:none;
-		margin:0;
+		margin:@zero;
 	}
 	label{
 		float:none;
-		width:auto;
-		margin:0 0 .5em 0;
+		width:@posAuto;
+		margin:@zero @zero .5em 0;
 	}
 	.buttonGroup{
-		margin:0;
+		margin:@zero;
 	}
 }
 @media screen and (max-width:479px){
@@ -304,50 +301,50 @@ label{
 		width:93%;
 	}
 	#navigation{
-		width:auto;
-		margin:0;
-		float:right;
-		clear:right;
+		width:@posAuto;
+		margin:@zero;
+		.floatElement(right);
+		.clearElement(right);
+        li{
+          display:block;
+          margin:@zero @zero .5em;
+          font-size:.9em;
+          text-align:left;
+        }
+        a{
+          color :@color333343;
+          display:block;
+          :hover{
+            color:#003676;
+          }
+        }
 	}
 	.miniLink{
 		display:block;
 		border:1px solid #787878;
-		border-radius:5px;
+        .borderRadius();
 		font-size:1em;
 		padding:.2em .5em;
-		margin:0;
+		margin:@zero;
 		background:#EDEDED;
 		cursor:pointer;
 	}
 	.topNavigation{
 		display:none;
-		margin:.5em 0 .5em;
-		background:#FFF;
+		margin:.5em @zero .5em;
+		background:@colorFFF;
 		position:absolute;
 		width:100px;
 		right:1.3em;
-		padding:0;
+		padding:@zero;
 		border:2px dashed #003676;
-	}
-	#navigation li{
-		display:block;
-		margin:0 0 .5em;
-		font-size:.9em;
-		text-align:left;
-	}
-	#navigation a{
-		color:#333343;
-		display:block;
-	}
-	#navigation a:hover{
-		color:#003676;
 	}
 	label{
 		float:none;
-		width:auto;
-		margin:0 0 .5em 0;
+		width:@posAuto;
+		margin:@zero @zero .5em 0;
 	}
 	.buttonGroup{
-		margin:0;
+		margin:@zero;
 	}
 }
