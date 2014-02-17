@@ -62,7 +62,7 @@ p{
 }
 #header{
 	margin:@zero @posAuto;
-	padding:.9em 0;
+	padding:.9em @zero;
 }
 .logo{
 	width:285px;
@@ -88,7 +88,7 @@ p{
     .textAlign(right);
     li{
       display:inline;
-      margin:@zero @zero 0 1em;
+      margin:@zero @zero @zero 1em;
     }
     a{
       color:@colorFFF;
@@ -115,11 +115,11 @@ p{
 .langNav{
   margin:.5em @zero;
   width:280px;
-  padding:.5em 0;
+  padding:.5em @zero;
   background:@colorCCC;
   li{
     display:inline;
-    margin:0 .5em 0;
+    margin:@zero .5em @zero;
   }
 }
 .message{
@@ -181,7 +181,7 @@ select{
 	margin:@zero @zero .5em;
 }
 .buttonGroup{
-	margin:@zero @zero 0 9em;
+	margin:@zero @zero @zero 9em;
 }
 .error{
   .textBox{  
@@ -200,7 +200,7 @@ select{
 	border-color:#474747;
 	width:@posAuto;
 	padding:.5em 2em;
-	margin:@zero .5em .5em 0;
+	margin:@zero .5em .5em @zero;
 	color:@colorFFF;
 	border:@zero;
 	font-weight:bold;
