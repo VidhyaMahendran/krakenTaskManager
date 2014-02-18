@@ -5,7 +5,7 @@ var addEditTasksModel = require('../models/tasksModel');
 module.exports = function (app) {
 
     app.get('/addEditTasks', function (req, res) {
-        console.log("GET called");
+        console.log('GET called');
         var model = {
             tasks: addEditTasksModel
         };
@@ -14,7 +14,7 @@ module.exports = function (app) {
 
     app.post('/addEditTasks', function (req, res) {
 
-        console.log("POST called");
+        console.log('POST called');
 
 	    var taskName = req.body.task_name && req.body.task_name.trim();
 	    var taskPriority = req.body.task_priority && req.body.task_priority.trim();
@@ -24,7 +24,7 @@ module.exports = function (app) {
 	    var taskStatus = req.body.task_status && req.body.task_status.trim();
 	    var taskId = req.body.task_id && req.body.task_id.trim();
 
-        console.log("Collecting the data from the Model");
+        console.log('Collecting the data from the Model');
 
 	    var newTask = new addEditTasksModel();
 
@@ -36,8 +36,8 @@ module.exports = function (app) {
         newTask.taskStatus = taskStatus;
         newTask.taskId = taskId;
 
-        // "newTask" model data can be used when we use Database for storing and retrieving. Right now, just printing it, since we use Client side LocalStorage.
-    	console.log("Task Added: " + newTask);
+        // 'newTask' model data can be used when we use Database for storing and retrieving. Right now, just printing it, since we use Client side LocalStorage.
+        console.log('Task Added:' + newTask);
 
         res.redirect('/listTasks');
     });

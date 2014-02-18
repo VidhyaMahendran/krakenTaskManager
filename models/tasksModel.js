@@ -2,12 +2,12 @@
 
 module.exports = function tasksModel() {
 	return {
-		"taskName" : "",
-        "taskPriority" : "",
-        "taskDetails" : "",
-        "taskCreated" : "",
-        "taskETA" : "",
-        "taskStatus" : "",
-        "taskId" : ""
+		'taskName' : '',
+        'taskPriority' : '',
+        'taskDetails' : '',
+        'taskCreated' : '',
+        'taskETA' : '',
+        'taskStatus' : '',
+        'taskId' : ''
 	};
 };
