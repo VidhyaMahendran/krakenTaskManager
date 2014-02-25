@@ -28,7 +28,7 @@
 						</span>
 					</p>
 					<p class="group">
-						<label for="task_priority">{@pre type="content" key="addEditTasks.enterYourTaskName"/}</label>
+						<label for="task_priority">{@pre type="content" key="addEditTasks.taskCategory"/}</label>
 						<span class="field">
 							<select class="inputControl" name="task_priority" id="task_priority">
 								<option value="normal">{@pre type="content" key="addEditTasks.normal"/}</option>
